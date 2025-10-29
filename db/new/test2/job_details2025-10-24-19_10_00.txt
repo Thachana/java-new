@@ -1,0 +1,55 @@
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Finding latest version of hashicorp/null...
+- Installing hashicorp/null v3.2.4...
+- Installed hashicorp/null v3.2.4 (signed by HashiCorp)
+- Installing hashicorp/aws v5.100.0...
+- Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+
+
+Error: Invalid function argument
+
+  on outputs.tf line 6, in output "cluster_stop_confirmation":
+   6:   value       = "Stop command initiated for Cluster ID: ${null_resource.stop_aurora_cluster_action.triggers.cluster_id}. Final Status: ${file("stop_result.txt")}"
+    ├────────────────
+    │ while calling file(path)
+
+Invalid value for "path" parameter: no file exists at "stop_result.txt"; this
+function works only with files that are distributed as part of the
+configuration source code, so if this file will be created by a resource in
+this configuration you must instead obtain this result from an attribute of
+that resource.
+
+
+Error: Invalid function argument
+
+  on outputs.tf line 6, in output "cluster_stop_confirmation":
+   6:   value       = "Stop command initiated for Cluster ID: ${null_resource.stop_aurora_cluster_action.triggers.cluster_id}. Final Status: ${file("stop_result.txt")}"
+    ├────────────────
+    │ while calling file(path)
+
+Invalid value for "path" parameter: no file exists at "stop_result.txt"; this
+function works only with files that are distributed as part of the
+configuration source code, so if this file will be created by a resource in
+this configuration you must instead obtain this result from an attribute of
+that resource.
+
+
